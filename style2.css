@@ -1,0 +1,295 @@
+/* ✅ Google Fonts 적용 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+/* ✅ 기본 스타일 */
+body {
+    background: linear-gradient(45deg, #ffe4e1, #fad0c4);
+    font-family: 'Poppins', sans-serif;
+    color: #d63384; /* 가독성 좋은 진한 핑크 */
+    text-align: center;
+    animation: sexyGlow 3s infinite alternate;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* ✅ 글씨 흔들리는 효과 */
+@keyframes sexyGlow {
+    0% { text-shadow: 0 0 10px #ff6b6b; }
+    100% { text-shadow: 0 0 15px #ff4d6d; }
+}
+
+/* ✅ 네비게이션 반응형 */
+nav ul {
+    background: rgba(255, 182, 193, 0.9);
+    padding: 15px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background: #d63384;
+    border-radius: 15px;
+    transition: transform 0.2s ease-in-out;
+    font-weight: 700;
+    display: block;
+}
+
+nav ul li a:hover {
+    transform: scale(1.1) rotate(3deg);
+    background: #ff6b6b;
+}
+
+/* ✅ 카드 스타일 (반응형) */
+.card {
+    background: rgba(255, 240, 245, 0.9);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #ff6b6b;
+    margin: 20px auto;
+    transition: all 0.3s ease-in-out;
+    color: #d63384;
+    max-width: 90%;
+}
+
+/* ✅ 버튼 반응형 */
+button {
+    background: linear-gradient(45deg, #d63384, #ff6b6b);
+    border: none;
+    padding: 15px;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    width: 100%;
+    max-width: 250px;
+    display: block;
+    margin: 10px auto;
+}
+
+button:hover {
+    transform: scale(1.1) rotate(-3deg);
+    background: #ff4d6d;
+}
+
+/* ✅ 반짝이는 섹시한 텍스트 효과 */
+h1, h2 {
+    animation: sparkle 2s infinite alternate;
+    color: #ff4d6d;
+}
+
+@keyframes sparkle {
+    0% { text-shadow: 0 0 10px #ff6b6b; }
+    100% { text-shadow: 0 0 15px #ff4d6d; }
+}
+
+/* ✅ 이미지 갤러리 (가로 정렬 & 반응형 적용) */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 자동 조절 */
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* ✅ 이미지 반응형 */
+.promo-img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff6b6b;
+    transition: transform 0.3s ease-in-out;
+    display: block;
+    margin: 0 auto;
+}
+
+.promo-img:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* ✅ 폼 요소 반응형 */
+input, select, textarea {
+    border: 2px solid #d63384;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    background: rgba(255, 240, 245, 0.5);
+    color: #d63384;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 10px auto;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px #ff6b6b;
+}
+
+/* ✅ 반응형 미디어 쿼리 (태블릿 & 모바일) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .card {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    .form-test-container {
+        display: flex;
+        flex-direction: column; /* 폼과 테스트를 세로 정렬 */
+        align-items: center;
+    }
+
+    #how-apply {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+.radio-group {
+    display: flex;
+    justify-content: center; /* 가운데 정렬 */
+    gap: 15px; /* 버튼 간 간격 */
+    flex-wrap: wrap; /* 작은 화면에서는 자동 줄바꿈 */
+    margin: 10px 0;
+}
+
+.radio-group label {
+    background: rgba(255, 182, 193, 0.2);
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.radio-group label:hover {
+    background: rgba(255, 182, 193, 0.5);
+}
+
+/* ✅ 반응형 (모바일에서는 세로 정렬) */
+@media (max-width: 768px) {
+    .radio-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+#chatbot {
+    text-align: center;
+    background: rgba(255, 240, 245, 0.9);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #ff6b6b;
+    margin: 20px auto;
+    max-width: 600px;
+    width: 90%; /* 🔥 화면 크기에 맞게 자동 조절 */
+}
+
+/* ✅ 입력창 스타일 (가로 길이 조정) */
+#user-input {
+    width: 80%;
+    padding: 12px;
+    border: 2px solid #d63384;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: center;
+    max-width: 400px; /* 입력창 너무 길어지지 않도록 */
+}
+
+/* ✅ 버튼 스타일 (터치 쉽게) */
+button {
+    width: 100%;
+    max-width: 250px;
+    display: block;
+    margin: 10px auto;
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+/* ✅ 출력 메시지 스타일 */
+#chat-output {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(255, 182, 193, 0.2);
+    border-radius: 10px;
+    min-height: 50px;
+    font-size: 1rem;
+}
+
+/* ✅ 반응형 스타일 (모바일 화면 대응) */
+@media (max-width: 768px) {
+    #chatbot {
+        width: 95%; /* 더 작은 화면에서는 최대한 넓게 */
+        padding: 15px;
+    }
+
+    #user-input {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    #chat-output {
+        font-size: 0.9rem;
+    }
+}
+
+/* ✅ 아주 작은 모바일 화면 (480px 이하) */
+@media (max-width: 480px) {
+    #chatbot {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #user-input {
+        width: 95%;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    #chat-output {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+}

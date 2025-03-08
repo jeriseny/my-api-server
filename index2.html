@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아앙 또균이의 여자링구 대모집!</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <h1>임 다 균 여자친구 모집 공고</h1>
+        <div><h2>이 시대 최고의 상남자, 임다균과 함께할 운명의 그녀를 찾습니다!!</h2></div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">소개</a></li>
+            <li><a href="#self-promotion">매력 어필</a></li>
+            <li><a href="#requirements">지원 자격</a></li>
+            <li><a href="#benefits">혜택</a></li>
+            <li><a href="#compatibility-test">궁합 테스트</a></li>
+            <li><a href="#fortune">오늘의 연애운</a></li>
+            <li><a href="#simulation">연애 시뮬레이션</a></li>
+            <li><a href="#yas-power">야스력 측정</a></li>
+            <li><a href="#chatbot">다균 AI에게 물어봐~</a></li>
+            <li><a href="#how-apply">신청 방법</a></li>
+        </ul>
+    </nav>
+
+    <audio id="bg-music" autoplay loop muted>
+        <source src="bgm.mp3" type="audio/mpeg">
+        브라우저가 오디오 태그를 지원하지 않습니다.
+    </audio>
+    <button id="music-toggle">🎵 배경음악 ON/OFF</button>
+
+    <!-- ✅ script.js 파일 로드 -->
+    <script src="script.js"></script>
+
+
+    <section id="about">
+        <h2>💙 임다균 소개</h2>
+        <img src="image/뽀샤시 다균.jpg" alt="뽀샤시 다균" width="150" height="100">
+        <ul>
+            <li>나이: 24세 2002년생</li>
+            <li>키: 183cm</li>
+            <li>성격: 유머러스함, 다정함</li>
+            <li>특이사항: 오도방 개고수, 여자 줘 팸</li>
+        </ul>
+    </section>
+
+    <section id="self-promotion">
+        <h2>왜 임다균이 최고의 남자친구인지 직접 확인하세요!!</h2>
+        <div class="gallery">
+            <img src="image/근엄 다균.jpg" alt="근엄 다균" class="promo-img">
+            <img src="image/아헤가오 다균.jpg" alt="아헤가오 다균" class="promo-img">
+            <img src="image/유쾌 다균.jpg" alt="윾쾌 다균" class="promo-img">
+            <img src="image/일상1.jpg" alt="일상 다균" class="promo-img">
+            <img src="image/하트 다균.jpg" alt="하트 다균" class="promo-img">
+            <img src="image/팀 스쿼드.webp" alt="직업" class="promo-img">
+        </div>
+        <ul>
+            <li>💪 "183cm, 모델급 기럭지! (고추 큼)"</li>
+            <li>🛵 "바이크로 여자친구 태우고 별 보러 갑니다. (죽을 확률 농후)"</li>
+            <li>🍕 "배달음식 마스터, 메뉴 고르기 무한 루프 없음!"</li>
+            <li>🎮 "게임할 때 팀원들 다 날 버려도 넌 안 버림"</li>
+            <li>🎤 "노래방 가면 감미로운 '임다균 발라드' 들어볼 수 있음"</li>
+            <li>🐶 "동물을 사랑하는 남자! 강아지랑 대화 가능 (개소리 포함)"</li>
+        </ul>
+    </section>
+
+    <section id="requirements">
+        <h2>지원 자격</h2>
+        <ul>
+            <li>나이는 15세~85세 사이</li>
+            <li>저급 유머를 이해하고 농담을 잘 받아줄 수 있는 분</li>
+            <li>임다균의 오토바이 사랑을 존중해줄 수 있는 분</li>
+            <li>일주일에 최소 3회 농밀한 야스가 가능하신 분</li>
+        </ul>
+    </section>
+
+    <section id="benefits">
+        <h2>🎁혜택🎁</h2>
+        <ul>
+            <li>🛵 오토바이 뒷자리 평생 무료 탑승권 제공</li>
+            <li>🍕 데이트 시 100% 식사 제공 (feat. 배달음식 마스터)</li>
+            <li>🎮 주말 게임 듀오 가능 (다이아급 롤 실력 보유)</li>
+            <li>🎤 노래방에서 남친 버프 +10</li>
+        </ul>
+    </section>
+
+    <!-- 오늘의 연애운 (맨 위에 배치) -->
+<section id="fortune" class="card">
+    <h2>🔮 오늘의 연애운 🔮</h2>
+    <p id="fortune-text">클릭해서 오늘의 연애운을 확인하세요!</p>
+    <button onclick="showFortune()">운세 보기</button>
+</section>
+
+<!-- 지원서 + 궁합 테스트를 한 줄에 배치 -->
+<div class="form-test-container">
+
+    <!-- 우측: 궁합 테스트 -->
+    <section id="compatibility-test" class="card">
+        <h2>💖 임다균 궁합 테스트 💖</h2>
+        <p>임다균과의 궁합을 확인하세요!</p>
+        
+        <form>
+            <p>1️⃣ 데이트 스타일은?</p>
+            <div class="radio-group">
+            <label><input type="radio" name="q1" value="1"> 모텔방 섹스 </label>
+            <label><input type="radio" name="q1" value="2"> 영화 보기 🎬</label>
+            <label><input type="radio" name="q1" value="3"> 바이크 드라이브 🏍</label>
+            <label><input type="radio" name="q1" value="4"> 놀이공원 🎡</label>
+            </div>
+
+            <p>2️⃣ 화났을 때 대처법?</p>
+            <div class="radio-group">
+            <label><input type="radio" name="q2" value="1"> 바로 사과하기 😢</label>
+            <label><input type="radio" name="q2" value="2"> 같이 섹스하기 </label>
+            <label><input type="radio" name="q1" value="3"> 선물 주기 🎁</label>
+            <label><input type="radio" name="q1" value="4"> 영화 보기 🎬</label>
+            
+            </div>
+            <p>3️⃣ 가장 좋아하는 음료?</p>
+            <div class="radio-group">
+            <label><input type="radio" name="q3" value="1"> 꼭지</label>
+            <label><input type="radio" name="q3" value="2"> 탄산음료 🥤</label>
+            <label><input type="radio" name="q3" value="3"> 맥주 🍺</label>
+            <label><input type="radio" name="q3" value="4"> 생수 💧</label>
+            </div>
+        </form>
+        <button onclick="calculateCompatibility()">궁합 확인하기!</button>
+        <h3 id="compatibility-result"></h3>
+    </section>
+</div>
+<section id="simulation" class="card">
+    <h2>💞 임다균과의 연애 시뮬레이션 💞</h2>
+    <p>데이트 중 임다균이 갑자기 화가 났다! 당신의 선택은?</p>
+    
+    <button onclick="chooseOption(1)">달래면서 맛있는 거 사주기 🍔</button>
+    <button onclick="chooseOption(2)">그냥 무시하고 지나가기 😑</button>
+    <button onclick="chooseOption(3)">화난 이유를 꼬치꼬치 캐묻기 🤔</button>
+    <p id="simulation-result"></p>
+</section>
+
+<section id="yas-power" class="card">
+    <h2>💦 다균의 야스력 테스트 💦</h2>
+    <p>아래 질문에 답하고 당신의 야스력을 확인하세요!</p>
+
+    <form id="yas-form">
+        <div class="radio-group">
+        <p>1️⃣ 첫 키스 후 어떤 기분?</p>
+        <label><input type="radio" name="q1" value="10"> 💘 심장이 콩닥콩닥</label><br>
+        <label><input type="radio" name="q1" value="20"> 🔥 바로 야스?</label><br>
+        <label><input type="radio" name="q1" value="0"> 😑 아무 느낌 없음</label><br>
+        </div>
+        <p>2️⃣ 연애할 때 가장 중요한 것?</p>
+        <div class="radio-group">
+        <label><input type="radio" name="q2" value="10"> 🥰 사랑과 존중</label><br>
+        <label><input type="radio" name="q2" value="20"> 💦 육체적 케미 농밀한 스킨쉽</label><br>
+        <label><input type="radio" name="q2" value="0"> 🧐 서로 독립적인 관계</label><br>
+        </div>
+        <p>3️⃣ 모텔에 갔을 때 나는?</p>
+         <div class="radio-group">
+        <label><input type="radio" name="q3" value="10"> 😳 "이런 곳은 처음이야..."</label><br>
+        <label><input type="radio" name="q3" value="20"> 😏 "내가 죽여줄게~"</label><br>
+        <label><input type="radio" name="q3" value="0"> 😐 "그냥 쉬러 왔어"</label><br>
+        </div>
+        <button type="button" onclick="calculateYasPower()">결과 확인하기</button>
+    </form>
+    <h3 id="yas-result"></h3>
+</section>
+
+
+<section id="chatbot" class="card">
+    <h2>💬 AI 다균이 연애 조언 챗봇</h2>
+    <p>다균이에게 연애 & 야스 관련 질문을 해보세요! 😏</p>
+    <input type="text" id="user-input" placeholder="예: 다균아, 연애 잘하는 법 알려줘!" />
+    <button onclick="askDakyun()">🤖 다균이에게 물어보기</button>
+    <div id="chat-output"></div>
+</section>
+
+
+<section id="how-apply" class="card">
+    <h2>💌 여자친구 지원 폼</h2>
+    <form action="#" id="applyform">
+        <label for="name">이름:</label>
+        <input type="text" id="name" placeholder="이름을 입력해주세요"><br>
+        <label for="age">나이:</label>
+        <input type="text" id="age" placeholder="나이를 입력해주세요"><br>
+        <label for="height">몸무게:</label>
+        <input type="text" id="height" placeholder="몸무게 입력"><br>
+        <label for="tel">연락처:</label>
+        <input type="tel" id="tel"><br>
+        <label for="chest">가슴 사이즈:</label>
+        <select id="chest">
+            <option value="">사이즈 선택</option>
+            <option value="AA">AA</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="over-D">D이상</option>
+        </select><br><br>
+        <label for="text1">자기소개:</label><br>
+        <textarea id="text1" cols="30" rows="3"></textarea>
+        <button type="submit">지원하기!</button>
+    </form>
+</section>
+
+
+    
+    <footer>
+        <hr>
+        
+        <p>&copy; 본 사이트는 임다균의 여자친구 모집을 위해 제작 되었습니다 2025 임다균 All rights reserved.</p>
+        <p></p>
+    </footer>
+</body>
+</html>
