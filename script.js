@@ -1,4 +1,4 @@
-const BACKEND_URL = "http://localhost:3000"; 
+const BACKEND_URL = "my-api-server-chi.vercel.app"; 
 document.addEventListener("DOMContentLoaded", function () {
     let bgMusic = document.getElementById("bg-music");
     let musicToggle = document.getElementById("music-toggle");
