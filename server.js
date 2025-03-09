@@ -7,11 +7,9 @@ const path = require("path");
 const app = express();
 app.use(express.json());
 app.use(cors());
-
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname));  // 🔹 루트 폴더에서 정적 파일 제공
 
 const PORT = process.env.PORT || 3000;
-
 
 app.post("/api/ask", async (req, res) => {
     const userInput = req.body.userInput;
@@ -42,7 +40,7 @@ app.post("/api/ask", async (req, res) => {
             },
             {
                 headers: {
-                    "Authorization": `Bearer ${process.env.API_KEY}`,  // 🔹 API 키는 여기에서만 사용!
+                    "Authorization": `Bearer ${process.env.API_KEY}`,
                     "Content-Type": "application/json"
                 }
             }
@@ -55,8 +53,11 @@ app.post("/api/ask", async (req, res) => {
     }
 });
 
+// ✅ index.html을 루트 폴더에서 직접 로드
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.listen(PORT, () => console.log(`✅ 서버 실행: http://localhost:${PORT}`));
+// ✅ Vercel에서 자동 할당된 포트 사용
+app.listen(PORT, () => console.log(`✅ 서버 실행 중: 포트 ${PORT}`));
+
