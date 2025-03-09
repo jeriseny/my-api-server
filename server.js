@@ -8,17 +8,17 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// ✅ 정적 파일(css, js, 이미지) 제공 설정 추가
-app.use(express.static(__dirname));  
+// ✅ 🔥 **정적 파일 제공 설정 - 중요!!**
+app.use(express.static(path.join(__dirname)));  
 
 const PORT = process.env.PORT || 3000;
 
-// ✅ 홈페이지(index.html) 요청 처리
+// ✅ 🔥 **정확한 파일 경로에서 `index.html` 제공**
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
 
-// ✅ OpenAI API 연결
+// ✅ 🔥 **OpenAI API 연결**
 app.post("/api/ask", async (req, res) => {
     const userInput = req.body.userInput;
     
@@ -52,5 +52,4 @@ app.post("/api/ask", async (req, res) => {
 
 // ✅ Vercel에서 자동 할당된 포트 사용
 app.listen(PORT, () => console.log(`✅ 서버 실행 중: 포트 ${PORT}`));
-
 
