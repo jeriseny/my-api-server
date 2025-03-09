@@ -9,7 +9,8 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(__dirname));  // 🔹 루트 폴더에서 정적 파일 제공
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;  // ✅ Vercel이 자동 할당하도록 설정
+app.listen(PORT, () => console.log(`✅ 서버 실행 중: 포트 ${PORT}`));
 
 app.post("/api/ask", async (req, res) => {
     const userInput = req.body.userInput;
