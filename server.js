@@ -8,8 +8,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// ✅ 정적 파일(css, js) 제공 경로 수정 (루트에서 제공!)
-app.use(express.static(__dirname));
+// ✅ 정적 파일(css, js, 이미지) 제공 설정 추가
+app.use(express.static(__dirname));  
 
 const PORT = process.env.PORT || 3000;
 
@@ -52,6 +52,5 @@ app.post("/api/ask", async (req, res) => {
 
 // ✅ Vercel에서 자동 할당된 포트 사용
 app.listen(PORT, () => console.log(`✅ 서버 실행 중: 포트 ${PORT}`));
-
 
 
