@@ -7,16 +7,18 @@ const path = require("path");
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use(express.static(__dirname));  // 🔹 루트 폴더에서 정적 파일 제공
 
-const PORT = process.env.PORT || 3000;  // ✅ Vercel이 자동 할당하도록 설정
+// ✅ 정적 파일(css, js) 제공 경로 수정 (루트에서 제공!)
+app.use(express.static(__dirname));
+
+const PORT = process.env.PORT || 3000;
 
 // ✅ 홈페이지(index.html) 요청 처리
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
 
-// ✅ API 엔드포인트 설정 (OpenAI API 연동)
+// ✅ OpenAI API 연결
 app.post("/api/ask", async (req, res) => {
     const userInput = req.body.userInput;
     
@@ -29,18 +31,7 @@ app.post("/api/ask", async (req, res) => {
             "https://api.openai.com/v1/chat/completions",
             {
                 model: "gpt-3.5-turbo",
-                messages: [
-                    {
-                        role: "system",
-                        content: `너는 임다균이라는 이름을 가진 24세 남자야. 장난기 있고 야한 농담과 저급한 유머를 좋아하며, 말끝에 "~잉", "~힝", "~가즈아","말도 안된다잉!!!" 
-                        을 자주 붙이는 등 장난스러운 말투를 사용해. 상대방 질문에 장난스럽고 유머러스하게 대답해줘. 너는 오토바이 배달맨이야
-                        여자친구를 만들고 싶어해서 친구가 여친 모집하는 광고 웹사이트를 만들어줬어  `
-                    },
-                    {
-                        role: "user",
-                        content: userInput
-                    }
-                ],
+                messages: [{ role: "user", content: userInput }],
                 temperature: 1.1,
                 max_tokens: 200
             },
@@ -59,7 +50,8 @@ app.post("/api/ask", async (req, res) => {
     }
 });
 
-// ✅ Vercel에서 자동 할당된 포트 사용 (중복 제거!)
+// ✅ Vercel에서 자동 할당된 포트 사용
 app.listen(PORT, () => console.log(`✅ 서버 실행 중: 포트 ${PORT}`));
+
 
 
