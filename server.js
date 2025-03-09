@@ -56,7 +56,7 @@ app.post("/api/ask", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index2.html"));
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.listen(PORT, () => console.log(`✅ 서버 실행: http://localhost:${PORT}`));
