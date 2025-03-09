@@ -65,12 +65,13 @@ document.getElementById("simulation-result").innerText = resultText;
 
 function calculateYasPower() {
     let score = 0;
+    
     let q1 = document.querySelector('input[name="q1"]:checked');
     let q2 = document.querySelector('input[name="q2"]:checked');
     let q3 = document.querySelector('input[name="q3"]:checked');
 
     if (q1 && q2 && q3) {
-        score = (parseInt(q1.value) || 0) + (parseInt(q2.value) || 0) + (parseInt(q3.value) || 0);
+        score = (Number(q1.value) || 0) + (Number(q2.value) || 0) + (Number(q3.value) || 0);
 
         console.log("총 점수:", score); // 🔥 디버깅용 점수 확인
 
@@ -88,6 +89,7 @@ function calculateYasPower() {
         document.getElementById("yas-result").innerText = "모든 문항을 선택해주세요!";
     }
 }
+
 
 
 async function askDakyun() {
