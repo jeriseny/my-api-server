@@ -10,8 +10,13 @@ app.use(cors());
 app.use(express.static(__dirname));  // 🔹 루트 폴더에서 정적 파일 제공
 
 const PORT = process.env.PORT || 3000;  // ✅ Vercel이 자동 할당하도록 설정
-app.listen(PORT, () => console.log(`✅ 서버 실행 중: 포트 ${PORT}`));
 
+// ✅ 홈페이지(index.html) 요청 처리
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// ✅ API 엔드포인트 설정 (OpenAI API 연동)
 app.post("/api/ask", async (req, res) => {
     const userInput = req.body.userInput;
     
@@ -54,11 +59,7 @@ app.post("/api/ask", async (req, res) => {
     }
 });
 
-// ✅ index.html을 루트 폴더에서 직접 로드
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
-});
-
-// ✅ Vercel에서 자동 할당된 포트 사용
+// ✅ Vercel에서 자동 할당된 포트 사용 (중복 제거!)
 app.listen(PORT, () => console.log(`✅ 서버 실행 중: 포트 ${PORT}`));
+
 
